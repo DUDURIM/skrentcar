@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SK렌터카</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <div class="logo" href="index.html"><img src="images/h1_logo.jpg" alt="#" />
+            <nav id="sangdannav">
+                <span>단기렌터카</span>
+                <span>장기렌터카</span>
+                <span>고객지원</span>
+            
+            <ul class="roll_menu">
+                <li><a class="roll_ezy_icon" target="_blank" href="https://www.skdirect.co.kr/nc"><img src="/images/icon_gnb_ez.gif" alt="sk렌터카 다이렉트"></a></li>
+                <li>
+                
+                    <a href="/rent/login/main.do">로그인</a>
+                
+                
+                </li>
+                
+                
+                
+                
+                    <li><a href="/rent/login/main.do">MY렌터카</a></li>
+                
+                <!-- <li>
+                    <a href="/rent/prmt/evnt/evnt_list.do">이벤트</a>
+                </li> 
+                <li>
+                    <a href="/rent/custcnte/notice/notice_list.do">고객센터</a>
+                </li> -->
+            </ul>
+        </nav>
+            
+        </div>
+
+
+
+    </header>
+
+
+    <div id="main">
+        <div id="mainnave">
+            <div id="left_main">
+                <section class="banner_main">
+                    <div class="container">
+                        <div class="mainTxtWrap jejuOn" id="txtDiv">
+                            <!--
+                                    제주 class="jejuOn" 추가
+                                    내륙 class="inlandOn" 추가
+                                       
+                                    예약확인 addclass="cmplt"
+                                    or
+                                    로그인시 addclass="login"
+                                 -->
+                            <!-- 로그인 아웃 상태 -->
+                            <p class="txt01">똑똑한 선택! 즐거운 여행!</p>
+                            <p class="txt02">믿고 타는 <strong>SK렌터카,</strong></p>
+                            <p class="txt02 jejuRsv" style=""><strong>제주도</strong>로 떠나세요!</p>
+                            <p class="txt02 inlandRsv" style="display:none;">지금 바로 떠나세요!</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="left_main2">
+                <div class="bnrTxtArea">
+                    <p class="txt03">[SK렌터카 다이렉트]</p>
+                    <p class="txt04">신차맞춤 첫 렌탈료 무료<br>다이렉트 전종 할인</p>
+                    <figure class="img" style="width:160px;margin-right:40px;">
+                        <img src="https://image.speedmate.com/speedimg/rentcar/real/newevent/220502/icon_evt_bnr_05.png"
+                            alt="신차맞춤 첫렌탈료 무료 ">
+                    </figure>
+                    <a href="#;" onclick="fnEventBannerLink(5);" class="goView">
+                        <span class="blind">이벤트바로가기</span>
+                    </a>
+                </div>
+            </div>
+
+
+            <div id="right_main">
+                <!-- <img class="rightimg" src="/images/우측사진.jpg" alt="예약페이지 "> -->
+                <div class="mainTab">
+                    <div class="tabWrap tabJeju" onclick="fnPopupAjax('jeju');">
+                      <p>제주
+                        <!-- 예약이력카운트 -->
+                        <a href="#none" class="goView">
+                          <span class="blind">제주예약하기</span>
+                        </a>
+                      </p>
+                    </div>
+                    <div class="tabWrap tabInland" onclick="fnPopupAjax('inland');" id="tabInland">
+                      <p>
+                        내륙
+                        <!-- 예약이력카운트 -->
+                        <a href="#none" class="goView">
+                          <span class="blind">내륙예약하기</span>
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                
+                
+                
+                  <div class="mainCotn" id="popupDiv">
+                  <div class="selectCont periodWrap">
+                    <p class="selTit">언제 필요하세요?</p>
+                    <div class="rentSelectBox">
+                      <div class="rentBox">
+                        <p class="tit">대여일시</p>
+                        <div class="selArea periodArea">
+                          <p class="txt" id="rsDate">2022.06.09(목)</p>
+                          <p class="txt" id="rsTime">11:00</p>
+                        </div>
+                      </div>
+                      <i class="icon_sel_arrow">
+                        <a href="#none" class="goView open" onclick="$('#rsTimeAbtn').click();" id="jejuDptDtmSelect">
+                          <span class="blind">팝업열기</span>
+                        </a>
+                      </i>
+                    </div>
+                    <div class="rentSelectBox">
+                      <div class="rentBox">
+                        <p class="tit">반납일시</p>
+                        <div class="selArea periodArea">
+                          <p class="txt" id="reDate">2022.06.11(토)</p>
+                          <p class="txt" id="reTime">15:00</p>
+                        </div>
+                      </div>
+                      <i class="icon_sel_arrow">
+                        <a href="#none" class="goView open" onclick="$('#reTimeAbtn').click();" id="jejuArvDtmSelect">
+                          <span class="blind">팝업열기</span>
+                        </a>
+                      </i>
+                    </div>
+                  </div>
+                
+                
+                  <div class="selectCont storeWrap btmInert" id="contDiv">
+                    <!-- 제주탭 비활성화 추가 class="btmInert" -->
+                    <p class="selTit">어디에서 이용하세요?</p>
+                    <div class="rentSelectBox">
+                      <div class="rentBox">
+                        <p class="tit">
+                          제주
+                          <span class="selectTxt">제주지점</span>
+                        </p>
+                      </div>
+                      <!-- <i class="icon_sel_arrow">
+                            <a href="#none" class="goView open">
+                              <span class="blind">팝업열기</span>
+                            </a>
+                          </i> -->
+                    </div>
+                
+                    <!-- 지점선택 레이어팝업 -->
+                    <div class="layerPopWrap">
+                      <div class="layerPopContainer">
+                
+                        <!-- 레이어팝업 컨텐츠 -->
+                        <div class="layerPopContent">
+                          <div class="selectWrap">
+                            <!-- 지역선택 -->
+                            <div class="selectDepth1">
+                              <div class="scrollWrap mCustomScrollbar _mCS_1 mCS_no_scrollbar">
+                                <div id="mCSB_1" class="mCustomScrollBox mCS-dark mCSB_vertical mCSB_inside" style="max-height: 263px;"
+                                  tabindex="0">
+                                  <div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+                                    style="position:relative; top:0; left:0;" dir="ltr">
+                                    <ul>
+                                    </ul>
+                                  </div>
+                                  <div id="mCSB_1_scrollbar_vertical"
+                                    class="mCSB_scrollTools mCSB_1_scrollbar mCS-dark mCSB_scrollTools_vertical" style="display: none;">
+                                    <div class="mCSB_draggerContainer">
+                                      <div id="mCSB_1_dragger_vertical" class="mCSB_dragger"
+                                        style="position: absolute; min-height: 30px; top: 0px;">
+                                        <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+                                      </div>
+                                      <div class="mCSB_draggerRail"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!--// 지점선택 -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--// 지점선택 레이어팝업 -->
+                  </div>
+                
+                  <div class="selectCont carWrap">
+                    <p class="selTit">어떤 차량을 원하세요?</p>
+                    <div class="rentSelectBox">
+                      <div class="rentBox">
+                        <p class="tit" id="rentCar">대여차량</p>
+                      </div>
+                      <i class="icon_sel_arrow">
+                        <a href="#none" class="goView open" id="jejuCarSelect" onclick="getCarMain();">
+                          <span class="blind">팝업열기</span>
+                        </a>
+                      </i>
+                    </div>
+                
+                    <!-- 차량선택 레이어팝업 -->
+                    <div class="layerPopWrap">
+                      <div class="layerPopContainer">
+                        <!-- 레이어팝업 헤더 -->
+                        <div class="layerPopTit">
+                          <h3 class="popTit">대여차량 선택</h3>
+                          <a href="#none" class="closed" id="carPopCloseBtn">
+                            <span class="blind">팝업 닫기</span>
+                          </a>
+                        </div>
+                        <!--// 레이어팝업 헤더 -->
+                
+                        <!-- 레이어팝업 컨텐츠 -->
+                        <div class="layerPopContent">
+                          <div class="selectWrap">
+                            <!-- 차종선택 -->
+                            <div class="selectDepth1">
+                              <div class="scrollWrap mCustomScrollbar _mCS_9 mCS_no_scrollbar">
+                                <div id="mCSB_9" class="mCustomScrollBox mCS-dark mCSB_vertical mCSB_inside" tabindex="0"
+                                  style="max-height: 263px;">
+                                  <div id="mCSB_9_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+                                    style="position:relative; top:0; left:0;" dir="ltr">
+                                    <ul>
+                                      <li onclick="fnCarList(0);"><label for="tg9l2" class="formRdo"><input type="radio" name="tg9"
+                                            id="tg9l2" checked=""><span class="tabBtn">전체<strong
+                                              id="rntCarAllCnt"></strong></span></label></li>
+                                      <li onclick="fnCarList(1);"><label for="tg9l3" class="formRdo"><input type="radio" name="tg9"
+                                            id="tg9l3"><span class="tabBtn">경차<strong id="rntCarCnt1"></strong></span></label></li>
+                                      <li onclick="fnCarList(2);"><label for="tg9l4" class="formRdo"><input type="radio" name="tg9"
+                                            id="tg9l4"><span class="tabBtn">소형<strong id="rntCarCnt2"></strong></span></label></li>
+                                      <li onclick="fnCarList(3);"><label for="tg9l5" class="formRdo"><input type="radio" name="tg9"
+                                            id="tg9l5"><span class="tabBtn">중형<strong id="rntCarCnt3"></strong></span></label></li>
+                                      <li onclick="fnCarList(4);"><label for="tg9l6" class="formRdo"><input type="radio" name="tg9"
+                                            id="tg9l6"><span class="tabBtn">대형<strong id="rntCarCnt4"></strong></span></label></li>
+                                      <li onclick="fnCarList(5);"><label for="tg9l7" class="formRdo"><input type="radio" name="tg9"
+                                            id="tg9l7"><span class="tabBtn">승합<strong id="rntCarCnt5"></strong></span></label></li>
+                                      <li onclick="fnCarList(6);"><label for="tg9l8" class="formRdo"><input type="radio" name="tg9"
+                                            id="tg9l8"><span class="tabBtn">SUV<strong id="rntCarCnt6"></strong></span></label></li>
+                                      <li onclick="fnCarList(7);"><label for="tg9l9" class="formRdo"><input type="radio" name="tg9"
+                                            id="tg9l9"><span class="tabBtn">수입차<strong id="rntCarCnt7"></strong></span></label></li>
+                                      <li onclick="fnCarList(8);"><label for="tg9l0" class="formRdo"><input type="radio" name="tg9"
+                                            id="tg9l0"><span class="tabBtn">전기차<strong id="rntCarCnt8"></strong></span></label></li>
+                                      <li onclick="fnCarList(9);"><label for="tg99l2" class="formRdo"><input type="radio" name="tg9"
+                                            id="tg99l2"><span class="tabBtn">차박(캠핑카)<strong id="rntCarCnt9"></strong></span></label>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div id="mCSB_9_scrollbar_vertical"
+                                    class="mCSB_scrollTools mCSB_9_scrollbar mCS-dark mCSB_scrollTools_vertical" style="display: none;">
+                                    <div class="mCSB_draggerContainer">
+                                      <div id="mCSB_9_dragger_vertical" class="mCSB_dragger"
+                                        style="position: absolute; min-height: 30px; top: 0px;">
+                                        <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+                                      </div>
+                                      <div class="mCSB_draggerRail"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!--// 차종선택 -->
+                
+                            <!-- 차량선택 -->
+                            <div class="selectDepth2">
+                              <div class="scrollWrap mCustomScrollbar _mCS_10 mCS_no_scrollbar">
+                                <div id="mCSB_10" class="mCustomScrollBox mCS-dark mCSB_vertical mCSB_inside" tabindex="0"
+                                  style="max-height: 263px;">
+                                  <div id="mCSB_10_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+                                    style="position:relative; top:0; left:0;" dir="ltr">
+                                    <ul id="carListUl">
+                                      <!-- 1set -->
+                                      <!-- <li>
+                                        <label for="tgl2" class="formRdo">
+                                          <input type="radio" name="tgl" id="tgl2" disabled>예약완료일 경우 disabled
+                                          <span class="rentName">K3 1.6 <strong>[가솔린]</strong></span>
+                                        </label>
+                                      </li> -->
+                                      <!--// 1set -->
+                                    </ul>
+                                  </div>
+                                  <div id="mCSB_10_scrollbar_vertical"
+                                    class="mCSB_scrollTools mCSB_10_scrollbar mCS-dark mCSB_scrollTools_vertical"
+                                    style="display: none;">
+                                    <div class="mCSB_draggerContainer">
+                                      <div id="mCSB_10_dragger_vertical" class="mCSB_dragger"
+                                        style="position: absolute; min-height: 30px; top: 0px;">
+                                        <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+                                      </div>
+                                      <div class="mCSB_draggerRail"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!--// 차량선택 -->
+                          </div>
+                        </div>
+                        <!--// 레이어팝업 컨텐츠 -->
+                
+                        <div class="layerPopBtm">
+                          <div class="btnWrap">
+                            <a class="btnRes" href="#none" onclick="fnChCar();">확인</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--// 차량선택 레이어팝업 -->
+                  </div>
+                
+                
+                
+                
+                  <div class="btnWrap">
+                
+                
+                
+                    <a class="btnConfirm" href="#none" onclick="javascript:fnGoLinkPage('confirmJeju');">예약확인</a>
+                
+                
+                    <a class="btnRes" href="#none" onclick="fnPageNext()">빠른 예약</a>
+                  </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                  <!-- <input type="date" data-placeholder="대여일시" required aria-required="ture">
+                      <input type="date" data-placeholder="반납일시" required aria-required="ture"> -->
+                  </div>
+                
+                </div>
+
+
+            </div>
+
+
+            <div style="clear:both"></div>
+
+            <!-- <div id="main_center_1">
+                
+
+            </div> -->
+
+            <div class="dirBnrWrap">
+                <div class="bnrCotn longRent01">
+                    <h3 class="linkTit">신차 장기렌터카</h3>
+                    <p class="linkTxt">
+                        믿을 수 있는<br>
+                        실시간 진짜 견적 서비스
+                    </p>
+                    <div class="goViewWrap">
+                        <a href="#;" onclick="fnBannerLink('directNc');">바로가기</a>
+                    </div>
+                </div>
+                <div class="bnrCotn longRent02">
+                    <h3 class="linkTit">중고차 장기렌터카</h3>
+                    <p class="linkTxt">
+                        품질은 신차급,<br>가격은 실속있게
+                    </p>
+                    <div class="goViewWrap">
+                        <a href="#;" onclick="fnBannerLink('directUc');">바로가기</a>
+                    </div>
+                </div>
+                <div class="bnrCotn tagoPay">
+                    <h3 class="linkTit">타고페이</h3>
+                    <p class="linkTxt">국내 유일,<br>탄 만큼만 내는 렌탈료</p>
+                    <div class="goViewWrap">
+                        <a href="#;" onclick="fnBannerLink('directTp');">바로가기</a>
+                    </div>
+                </div>
+                <div class="bnrCotn csCotn">
+                    <h3 class="linkTit">장기렌트 전문가 상담</h3>
+                    <p class="linkTxt">1:1 맞춤 컨설팅</p>
+                    <div class="goViewWrap">
+                        <a href="#;" onclick="fnBannerLink('longCounsel');">신차 장기렌트<br>법인 월렌트(중고차)</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="main_center_2">
+                <div class="LinkWrap">
+					<ul>
+						<li class="linkLi">
+							<i class="iconBill"></i>
+							<span class="linkMenu">빌리카</span>
+							<a href="#;" onclick="fnIconLink('billycar');" class="goView">
+								<span class="blind">빌리카 바로가기</span>
+							</a>
+						</li>
+						<li class="linkLi">
+							<i class="iconLink"></i>
+							<span class="linkMenu">스마트링크</span>
+							<a href="#;" onclick="fnIconLink('smartLink');" class="goView">
+								<span class="blind">스마트링크 바로가기</span>
+							</a>
+						</li>
+						<li class="linkLi">
+							<i class="iconCare"></i>
+							<span class="linkMenu">스마트케어</span>
+							<a href="#;" onclick="fnIconLink('smartCare');" class="goView">
+								<span class="blind">스마트케어 바로가기</span>
+							</a>
+						</li>
+						<!-- 2022-02-08_수정 -->
+						<li class="linkLi">
+							<i class="iconLive"></i>
+							<span class="linkMenu">렌탈 LIVE방송</span>
+							<a href="#;" onclick="fnIconLink('directLive');" class="goView">
+								<span class="blind">렌탈 IVE방송 바로가기</span>
+							</a>
+						</li>
+						<!--// 2022-02-08_수정 -->
+					</ul>
+				</div>
+                
+
+            </div>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-link">
+                <nav id="cscenter-info">
+                    <span class="cscenter">SK렌터카 고객센터&nbsp;&nbsp;1599-9111</span>
+                    <div class="timetable">
+                        <span>일반상담 : 월~금 09:00~18:00(토요일 및 공휴일 휴무)</span>
+                        <span>사고접수 : 24시간 운영</span>
+                    </div>
+                </nav><!--//20170522 수정-->
+                <div class="family-site">
+                    <a href="#none" class="is-close">Family Site</a>
+                    <ul style="display: none;">
+                        <li><a href="http://www.sknetworks.co.kr" target="_blank">SK networks</a></li>
+                        <li><a href="https://www.speedmate.com" target="_blank">스피드메이트</a></li>
+                        <li><a href="https://www.enclean.com/main" target="_blank">머핀</a></li>
+                        <li><a href="http://www.okcashbag.com" target="_blank">OKcashbag</a></li>
+                        <li><a href="http://www.skteleplaza.co.kr" target="_blank">SK Teleplaza</a></li>
+                        <li><a href="http://www.walkerhill.com/" target="_blank">Walkerhill</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-info">
+                <h1>SK렌터카</h1>
+                <div class="footer-menu">
+                     <ul>
+                        <li><a href="https://company.skcarrental.com/" target="_blank">회사소개</a></li>
+                        <li><a href="/rent/intro/html/sm_info.do">Sales Partner 모집</a></li><!-- /rent/intro/html/sm_info.do -->
+                        <li><a href="/rent/etc/html/use_terms.do">이용약관</a></li>
+                        <!-- 200318 주석처리<li><a href="/rent/etc/html/membership_cclpg.do">멤버십 이용약관</a></li> -->
+                        <li><a href="/rent/etc/html/privacy_policyinfo.do" style="color:#f68121;">개인정보처리방침</a></li>
+                        <li><a href="#modal-email" class="btn-modal">이메일무단수집거부</a></li>
+                        <li><a href="/rent/custcnte/notice/notice_list.do">고객센터</a></li>
+                        <li><a href="/rent/etc/html/site_map.do">사이트맵</a></li>
+                        <li class="sk_ethics"><a href="https://ethics.sk.co.kr/Kor/Main.aspx" target="_blank">SK 윤리경영 제보</a></li> <!-- 200821 추가 -->
+                    </ul>
+                </div>
+                <div class="site-info">
+                    <address>주소 : 서울특별시 구로구 서부샛길 822(구로동)</address>
+                    <span>상호명 : SK렌터카(주)</span>
+                    <span>대표이사 : 황일문</span><br>
+                    <span>사업자번호 : 113-81-32864</span>
+                    <span>통신판매업신고 : 구로구청 제2006-03389</span><br>
+                    <span>TEL : 1599-9111</span>
+                   <!-- 200706 주석처리 <span style="margin-right:20px;">FAX : 02-2000-0838</span>  -->      
+                </div>
+                <p class="copyright">Copyright ⓒ SK렌터카  All Rights Reserved.</p> 
+                <!-- 201103 sns링크 추가 -->
+                <div class="sns_link">
+                    <ul>
+                        <li class="youtube"><a href="https://bit.ly/3bHtyMe" target="blank"></a></li>
+                        <li class="facebook"><a href="https://www.facebook.com/SKRentacarsns" target="blank"></a></li>
+                        <li class="instargram"><a href="https://www.instagram.com/skrentacar_official" target="blank"></a></li>
+                        <li class="blog"><a href="https://blog.naver.com/skrentacar_official" target="blank"></a></li>
+                        <li class="post"><a href="https://post.naver.com/skrentacar_official" target="blank"></a></li>
+                    </ul>
+                </div>
+                
+                <!-- 201111 네이버 검색 SNS 추가 -->
+                <span itemscope="" itemtype="http://schema.org/Organization">
+                    <link itemprop="url" href="https://www.skcarrental.com">
+                    <a itemprop="sameAs" href="https://www.facebook.com/SKRentacarsns"></a>
+                    <a itemprop="sameAs" href="https://www.instagram.com/skrentacar_official"></a>
+                    <a itemprop="sameAs" href="https://blog.naver.com/skrentacar_official"></a>
+                    <a itemprop="sameAs" href="https://post.naver.com/skrentacar_official"></a>
+                </span>
+                <!-- <p class="award"><img src="/resources/img/img-award-2017.png" title="2017 International Business Awards 마케팅부문(교통) 금상 수상"></p> --><!--20170831 추가-->
+                <!-- <p class="award" style="right:65px"><img src="/resources/img/img-award-2018.png" title="2017 과학기술정보통신부장관상 수상"></p>--><!--20180305 추가-->
+                <!--  210225 수정 -->
+                <div class="award">
+                    <p>
+                        <img src="/images/img-award-isms.png" title="ISMS-P">
+                        <span style="margin-top:10px;"><em>인증범위 &nbsp;: </em>&nbsp;차량렌탈 서비스, 스마트링크서비스</span>
+                        <span><em>유효기간 &nbsp;: </em>&nbsp;2020-12-16  ~ 2023-12-15</span>
+                    </p>
+                    <img src="/images/img-award-ncsi.png" title="2018년 국가고객만족도 1위">
+                
+                </div>
+                <!-- //210225 수정 -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
